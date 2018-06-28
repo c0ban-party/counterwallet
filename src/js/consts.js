@@ -10,8 +10,8 @@ var MAX_ADDRESSES = 20; //arbitrary (but will generate more on login if they hav
                         //additional addresses from being generated via the GUI)
 
 //Order expiration
-var ORDER_DEFAULT_EXPIRATION = 15000; //num blocks until expiration (at ~90 sec per block this is ~6.95 days)
-var ORDER_MAX_EXPIRATION = 45000; //max expiration for order
+var ORDER_DEFAULT_EXPIRATION = 18000; //num blocks until expiration (at ~32 sec per block this is ~6.66 days)
+var ORDER_MAX_EXPIRATION = ORDER_DEFAULT_EXPIRATION * 3; //max expiration for order
 
 var STATS_MAX_NUM_TRANSACTIONS = 100; //max # transactions to show in the table
 var VIEW_PRICES_NUM_ASSET_PAIRS = 50; //show market info for this many pairs
@@ -19,7 +19,7 @@ var VIEW_PRICES_ASSET_PAIRS_REFRESH_EVERY = 60 * 1000; //refresh asset pair mark
 var VIEW_PRICES_NUM_LATEST_TRADES = 50; //show this many latest trades on the view prices page
 var VIEW_PRICES_LATEST_TRADES_REFRESH_EVERY = 60 * 1000; //refresh latest trades every 1 minutes
 
-var MARKET_INFO_REFRESH_EVERY = 60 * 1000; //refresh market info every 1 minutes while enabled (on buy/sell page, and view prices page) 
+var MARKET_INFO_REFRESH_EVERY = 60 * 1000; //refresh market info every 1 minutes while enabled (on buy/sell page, and view prices page)
 
 var CHAT_NUM_USERS_ONLINE_REFRESH_EVERY = 60 * 1000; //refresh online user count every 1 minutes while enabled
 
@@ -51,7 +51,7 @@ var SUBASSET_MAX_DISP_LENGTH = 20;
 var IS_MOBILE_OR_TABLET = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
 var MAX_INT = Math.pow(2, 63) - 1;
 var UNIT = 100000000; //# satoshis in whole
-var MIN_FEE = 100000; // in watanabes (== .001 MONA)
+var MIN_FEE = 50000; // in kobayashis (== .0005 CBN)
 var REGULAR_DUST_SIZE = 54600;
 var MULTISIG_DUST_SIZE = 78000;
 var MIN_BALANCE_FOR_ACTION = 50000; //in satoshis ... == .0005
@@ -181,15 +181,16 @@ var BET_MATCHES_STATUS = {
 
 var LEVERAGE_UNIT = 5040;
 
-var MAINNET_UNSPENDABLE = 'MMonapartyMMMMMMMMMMMMMMMMMMMUzGgh';
-var TESTNET_UNSPENDABLE = 'msVB7uMdzAwgQuph5pL8Zb7aiYgjYoFH1q';
+// var MAINNET_UNSPENDABLE = 'MMonapartyMMMMMMMMMMMMMMMMMMMUzGgh';
+var MAINNET_UNSPENDABLE = 'CC0banpartyCBBBBBBBBBBBBBBBBBBUzGgh';
+var TESTNET_UNSPENDABLE = 'msVB7uMdzAwgQuph5pL8Zb7aiYgjYoFH1q'; // TODO: fix this
 var TESTNET_BURN = {
-  START:  79400,
+  START:  1,
   END:  1150000
 };
 var MAINNET_BURN = {
-  START: 1166000,
-  END:   1179440
+  START: 1,
+  END:   88000000
 };
 
 /***********
@@ -259,15 +260,14 @@ var DONATION_ADDRESS = USE_TESTNET ? 'n2T96WQMsY9jx8dPzczaEub9BGkpGXXs4C' : 'MUq
 var APPROX_SECONDS_PER_BLOCK = USE_TESTNET ? 20 * 60 : 60; //a *rough* estimate on how many seconds per each block (used for estimating open order time left until expiration, etc)
 
 var KEY_ASSET = {
-  'BTC': 'MONA',
-  'XCP': 'XMP',
+  'BTC': 'CBN',
+  'XCP': 'XBP',
   'USD': 'JPY',
-  'Bitcoin': 'Monacoin',
-  'Counterparty': 'Monaparty'
+  'Bitcoin': 'c0ban',
+  'Counterparty': 'c0ban-party'
 };
 
 var KEY_ASSET_WEBSITE = {
   'BTC': 'https://bitcoin.org/',
   'XCP': 'https://counterparty.io/'
 };
-

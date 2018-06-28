@@ -1,13 +1,13 @@
 {
-  "name": "counterwallet-monaparty",
-  "description": "Counterwallet for Monaparty",
+  "name": "counterwallet-c0ban-party",
+  "description": "Counterwallet for c0ban",
   "author": "Counterparty development team",
   "license": "(CDDL-1.0)",
   "version": "1.8.0",
   "main": "build/index.html",
   "repository": {
     "type": "git",
-    "url": "https://github.com/monaparty/counterwallet.git"
+    "url": "https://github.com/shohu/counterwallet.git"
   },
   "devDependencies": {
     "bower": "^1.8.2",
