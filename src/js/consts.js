@@ -51,7 +51,7 @@ var SUBASSET_MAX_DISP_LENGTH = 20;
 var IS_MOBILE_OR_TABLET = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
 var MAX_INT = Math.pow(2, 63) - 1;
 var UNIT = 100000000; //# satoshis in whole
-var MIN_FEE = 50000; // in kobayashis (== .0005 CBN)
+var MIN_FEE = 50000; // in kobayashis (== .0005 RYO)
 var REGULAR_DUST_SIZE = 54600;
 var MULTISIG_DUST_SIZE = 78000;
 var MIN_BALANCE_FOR_ACTION = 50000; //in satoshis ... == .0005
@@ -182,7 +182,7 @@ var BET_MATCHES_STATUS = {
 var LEVERAGE_UNIT = 5040;
 
 // var MAINNET_UNSPENDABLE = 'MMonapartyMMMMMMMMMMMMMMMMMMMUzGgh';
-var MAINNET_UNSPENDABLE = 'CC0banpartyCBBBBBBBBBBBBBBBBBBUzGgh';
+var MAINNET_UNSPENDABLE = 'mhs85bdvdYmbxwyreXLscm2qzAgcxmF7aH'; // TODO: fix this
 var TESTNET_UNSPENDABLE = 'msVB7uMdzAwgQuph5pL8Zb7aiYgjYoFH1q'; // TODO: fix this
 var TESTNET_BURN = {
   START:  1,
@@ -260,7 +260,7 @@ var DONATION_ADDRESS = USE_TESTNET ? 'n2T96WQMsY9jx8dPzczaEub9BGkpGXXs4C' : 'MUq
 var APPROX_SECONDS_PER_BLOCK = USE_TESTNET ? 20 * 60 : 60; //a *rough* estimate on how many seconds per each block (used for estimating open order time left until expiration, etc)
 
 var KEY_ASSET = {
-  'BTC': 'CBN',
+  'BTC': 'RYO',
   'XCP': 'XBP',
   'USD': 'JPY',
   'Bitcoin': 'c0ban',

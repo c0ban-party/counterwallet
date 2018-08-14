@@ -4,29 +4,29 @@ var bitcore = require('bitcore-lib');
 var bitcoreMessage = require('bitcore-message'); // this also binds itself to bitcore.Message as soon as it's require'd
 bitcoreMessage.MAGIC_BYTES = bitcore.deps.Buffer('c0ban Signed Message:\n');
 
-var mainnet = {
-  hashGenesisBlock: '000000005184ffce04351e687a3965b300ee011d26b2089232cd039273be4a67',
-  port: 3881,
-  portRpc: 3882,
-  protocol: { magic: 0x6e623063 },
-  seedsDns: [ 'jp01.dnsseed.c0ban.com', 'kr01.dnsseed.c0ban.com' ],
-  versions:
-   { bip32: { private: 0x0488ade4, public: 0x0488b21e },
-     bip44: 0, // CBN isn't registerd at BIP-44
-     private: 136,
-     public: 18,
-     scripthash: 28},
-  name: 'mainnet',
-  unit: 'CBN',
-  testnet: false,
-  alias: 'mainnet',
-  pubkeyhash: 18,
-  privatekey: 136,
-  scripthash: 28,
-  xpubkey: 0x0488b21e,
-  xprivkey: 0x0488ade4,
-  networkMagic: 1664115310,
-  dnsSeeds: [ 'jp01.dnsseed.c0ban.com', 'kr01.dnsseed.c0ban.com' ] };
+// var mainnet = {
+//   hashGenesisBlock: '000000005184ffce04351e687a3965b300ee011d26b2089232cd039273be4a67',
+//   port: 3881,
+//   portRpc: 3882,
+//   protocol: { magic: 0x6e623063 },
+//   seedsDns: [ 'jp01.dnsseed.c0ban.com', 'kr01.dnsseed.c0ban.com' ],
+//   versions:
+//    { bip32: { private: 0x0488ade4, public: 0x0488b21e },
+//      bip44: 0, // RYO isn't registerd at BIP-44
+//      private: 136,
+//      public: 18,
+//      scripthash: 28},
+//   name: 'mainnet',
+//   unit: 'RYO',
+//   testnet: false,
+//   alias: 'mainnet',
+//   pubkeyhash: 18,
+//   privatekey: 136,
+//   scripthash: 28,
+//   xpubkey: 0x0488b21e,
+//   xprivkey: 0x0488ade4,
+//   networkMagic: 1664115310,
+//   dnsSeeds: [ 'jp01.dnsseed.c0ban.com', 'kr01.dnsseed.c0ban.com' ] };
 
 var testnet = {
   hashGenesisBlock: '000000005184ffce04351e687a3965b300ee011d26b2089232cd039273be4a67',
@@ -41,7 +41,7 @@ var testnet = {
      public: 111,
      scripthash: 196 },
   name: 'testnet',
-  unit: 'CBN',
+  unit: 'RYO',
   testnet: true,
   alias: 'testnet',
   pubkeyhash: 111,
@@ -52,10 +52,35 @@ var testnet = {
   networkMagic: 1664115310,
   };
 
+// var regtest = {
+var mainnet = {
+  hashGenesisBlock: '3249e44acac8fc67e6b94e882525cea6f5a9853e1ff7b4a1d5f470b23ff8ae11',
+  port: 3881,
+  portRpc: 3882,
+  protocol: { magic: 0xdab5bffa },
+  versions:
+   { bip32: { private: 0x04358394, public: 0x043587cf },
+     bip44: 1,
+     private: 239,
+     public: 111,
+     scripthash: 196 },
+  name: 'regtest',
+  unit: 'RYO',
+  testnet: false,
+  alias: 'regtest',
+  pubkeyhash: 111,
+  privatekey: 239,
+  scripthash: 196,
+  xpubkey: 0x043587cf,
+  xprivkey: 0x04358394,
+  networkMagic: 4206867930,
+  };
+
 bitcore.Networks.remove(bitcore.Networks.testnet);
 bitcore.Networks.mainnet = bitcore.Networks.add(mainnet);
 bitcore.Networks.testnet = bitcore.Networks.add(testnet);
-bitcore.Networks.livenet = bitcore.Networks.mainnet;
+// bitcore.Networks.regtest = bitcore.Networks.add(regtest);
+bitcore.Networks.livenet = bitcore.Networks.mainnet;  // TODO change mainnet
 
 
 // this 'global' is overwritten by tests!
@@ -221,6 +246,7 @@ CWPrivateKey.prototype.checkTransactionDest = function(txHex, destAdress) {
   try {
     return CWBitcore.checkTransactionDest(txHex, this.getAddresses(), destAdress);
   } catch (err) {
+    console.log(err);
     return false;
   }
 }
