@@ -80,19 +80,21 @@ RUN git rev-parse HEAD
 RUN npm -g install npm@4.6.1
 RUN npm config set strict-ssl false
 ENV PHANTOMJS_CDNURL="http://cnpmjs.org/downloads"
+RUN npm install -g bower grunt
+
 RUN npm run bower -- --allow-root --config.interactive=false update
 RUN npm install
+RUN mkdir -p /counterwallet/src/vendors/html2canvas/build && \
+    cp /counterwallet/node_modules/html2canvas/dist/html2canvas.js /counterwallet/src/vendors/html2canvas/build
 RUN npm run prepublish
 RUN cp -a /counterwallet/counterwallet.conf.json.example /counterwallet/counterwallet.conf.json
 RUN rm -f /root/.transifex
 
-EXPOSE 80 443
-
 # forward nginx request and error logs to docker log collector
 RUN ln -sf /dev/stdout /var/log/nginx/access.log \
 	&& ln -sf /dev/stderr /var/log/nginx/error.log
-    
+
 # REMOVE THIS LINE LATER
 RUN apt-get update && apt-get -y install gettext-base
 
-CMD ["start.sh"]
+CMD ["/sbin/init"]

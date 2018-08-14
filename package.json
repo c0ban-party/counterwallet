@@ -9,6 +9,9 @@
     "type": "git",
     "url": "https://github.com/shohu/counterwallet.git"
   },
+  "dependencies": {
+    "bower": "^1.8.2"
+  },
   "devDependencies": {
     "bower": "^1.8.2",
     "chai": "=1.9.1",
@@ -21,7 +24,8 @@
     "mocha": "1.18.2",
     "mocha-phantomjs": "^4.1.0",
     "transifex": "1.4.2",
-    "uglify-js": "1.3.5"
+    "uglify-js": "1.3.5",
+    "html2canvas": "1.0.0-alpha.12"
   },
   "scripts": {
     "bower": "cd src && bower",
