@@ -140,10 +140,10 @@
                           <div class="row">
                             <label class="col col-lg-4 control-label font-medlg"><span data-bind="locale: 'wager'"></span>:</label>
                             <div class="col col-lg-8">
-                              <input type="text"  name="wager" class="number form-control"  data-bind="value: $parent.wager, valueUpdate: 'input'" /> <span data-bind="text: XCP"></span>
+                              <input type="text"  name="wager" class="number form-control"  data-bind="value: $parent.wager, valueUpdate: 'input'" /> <span data-bind="text: XBP"></span>
                               <br /><span class="invalid" data-bind="validationMessage: $parent.wager"></span>
                             </div>
-                          </div> 
+                          </div>
                           <div class="row">
                             <label class="col col-lg-4 control-label font-medlg"><span data-bind="locale: 'your_choice'"></span>:</label>
                             <div class="col col-lg-8" data-bind="visible: info_data.type=='binary'">
@@ -166,14 +166,14 @@
                                 <span style="font-size: 16px" data-bind="text: $parent.betTypeLabelBear"></span>
                               </label>
                             </div>
-                          </div>                              
-                          <div class="row" data-bind="visible: $parent.showAdvancedOptions || ($parent.counterBets().length == 0 && $parent.operatorOdds()==false)"> 
-                            <label class="col col-lg-4 control-label font-medlg"><span data-bind="locale: 'odds'"></span>:</label> 
-                            <div class="col col-lg-8">                
-                              <input name="odd" class="number form-control" data-bind="value: $parent.odd, valueUpdate: 'input'" type="text"/> <span data-bind="text: XCP"></span>
+                          </div>
+                          <div class="row" data-bind="visible: $parent.showAdvancedOptions || ($parent.counterBets().length == 0 && $parent.operatorOdds()==false)">
+                            <label class="col col-lg-4 control-label font-medlg"><span data-bind="locale: 'odds'"></span>:</label>
+                            <div class="col col-lg-8">
+                              <input name="odd" class="number form-control" data-bind="value: $parent.odd, valueUpdate: 'input'" type="text"/> <span data-bind="text: XBP"></span>
                               <span class="invalid" data-bind="validationMessage: $parent.odd"></span>
-                              <br /><div class="note" data-bind="locale: 'odds_note', localeArgs: XCP"></div>
-                            </div>                      
+                              <br /><div class="note" data-bind="locale: 'odds_note', localeArgs: XBP"></div>
+                            </div>
                           </div>
                           <div class="row" data-bind="visible: info_data.type=='cfd' && $parent.showAdvancedOptions">
                             <label class="col col-lg-4 control-label font-medlg"><span data-bind="locale: 'leverage'"></span>:</label> 
@@ -215,7 +215,7 @@
                               <div class="progress-bar bg-color-greenLight" data-bind="attr: {style: 'width: '+$parent.greenPercent()+'%'}"></div>
                               <div class="progress-bar bg-color-redLight" data-bind="attr: {style: 'width: '+(100-$parent.greenPercent())+'%'}"></div>
                             </div>
-                            <span data-bind="locale: 'win'"></span> <span data-bind="text: $parent.odd"></span> <span data-bind="locale: 'for_every_xcp', localeArgs: {0:XCP, 1:XCP}"></span> 
+                            <span data-bind="locale: 'win'"></span> <span data-bind="text: $parent.odd"></span> <span data-bind="locale: 'for_every_xcp', localeArgs: {0:XBP, 1:XBP}"></span>
                             <a data-bind="visible: operatorOdds" href="#" onclick="return false" title="The feed operator is actively managing the odds">
                               <span class="fa fa-crosshairs"></span>
                             </a>
