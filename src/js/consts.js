@@ -183,7 +183,7 @@ var LEVERAGE_UNIT = 5040;
 
 // var MAINNET_UNSPENDABLE = 'MMonapartyMMMMMMMMMMMMMMMMMMMUzGgh';
 var MAINNET_UNSPENDABLE = 'mhs85bdvdYmbxwyreXLscm2qzAgcxmF7aH'; // TODO: fix this
-var TESTNET_UNSPENDABLE = 'msVB7uMdzAwgQuph5pL8Zb7aiYgjYoFH1q'; // TODO: fix this
+var TESTNET_UNSPENDABLE = 'pkApS2be845noEQ7xjF64LhC2fwh15rNnc'; // TODO: fix this
 var TESTNET_BURN = {
   START:  1,
   END:  1150000
@@ -255,7 +255,7 @@ var ROLLBAR_ACCESS_TOKEN = null; //will be set in counterwallet.js
 var TRANSACTION_DELAY = 5000; // delay between transaction to avoid error -22 (vin reused)
 var TRANSACTION_MAX_RETRY = 5; // max retry when transaction failed (don't include first transaction, so 3 retry means 4 queries)
 
-var DONATION_ADDRESS = USE_TESTNET ? 'n2T96WQMsY9jx8dPzczaEub9BGkpGXXs4C' : 'MUqM2tDnZXtJ4h87W2g8fFz9nW3GsYhMfu';
+var DONATION_ADDRESS = USE_TESTNET ? 'paf8nHJjrBAHP5vbAVtZPC6ZY1LKfeRPxN' : 'MUqM2tDnZXtJ4h87W2g8fFz9nW3GsYhMfu';
 
 var APPROX_SECONDS_PER_BLOCK = USE_TESTNET ? 20 * 60 : 60; //a *rough* estimate on how many seconds per each block (used for estimating open order time left until expiration, etc)
 

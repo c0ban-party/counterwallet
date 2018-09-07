@@ -28,32 +28,62 @@ bitcoreMessage.MAGIC_BYTES = bitcore.deps.Buffer('c0ban Signed Message:\n');
 //   networkMagic: 1664115310,
 //   dnsSeeds: [ 'jp01.dnsseed.c0ban.com', 'kr01.dnsseed.c0ban.com' ] };
 
+// var testnet = {
+//   hashGenesisBlock: '000000005184ffce04351e687a3965b300ee011d26b2089232cd039273be4a67',
+//   port: 13881,
+//   portRpc: 13882,
+//   protocol: { magic: 0x8e828083 },
+//   // seedsDns: [ 'testnet-dnsseed.monacoin.org' ],
+//   versions:
+//    { bip32: {
+//         private: 0x84858384,
+//         public: 0x083888c8
+//      },
+//      bip44: 1,
+//      private: 238,
+//      public: 118,
+//      scripthash: 198 },
+//   name: 'testnet',
+//   unit: 'RYO',
+//   testnet: true,
+//   alias: 'testnet',
+//   pubkeyhash: 118,
+//   privatekey: 238,
+//   scripthash: 198,
+//   xpubkey: 0x083888c8,
+//   xprivkey: 0x84858384,
+//   networkMagic: 2206237326,
+//   };
+
 var testnet = {
   hashGenesisBlock: '000000005184ffce04351e687a3965b300ee011d26b2089232cd039273be4a67',
   port: 13881,
   portRpc: 13882,
-  protocol: { magic: 0x6e623063 },
+  protocol: { magic: 0x8e828083 },
   // seedsDns: [ 'testnet-dnsseed.monacoin.org' ],
   versions:
-   { bip32: { private: 0x94833504, public: 0xcf873504 },
+   { bip32: {
+        private: 0x04388388,
+        public: 0x04588788
+     },
      bip44: 1,
-     private: 239,
-     public: 111,
-     scripthash: 196 },
+     private: 238,
+     public: 118,
+     scripthash: 198 },
   name: 'testnet',
   unit: 'RYO',
   testnet: true,
   alias: 'testnet',
-  pubkeyhash: 111,
-  privatekey: 239,
-  scripthash: 196,
-  xpubkey: 0xcf873504,
-  xprivkey: 0x94833504,
-  networkMagic: 1664115310,
+  pubkeyhash: 118,
+  privatekey: 238,
+  scripthash: 198,
+  xpubkey: 0x04588788,
+  xprivkey: 0x04388388,
+  networkMagic: 2206237326,
   };
 
-// var regtest = {
-var mainnet = {
+var regtest = {
+// var mainnet = {
   hashGenesisBlock: '3249e44acac8fc67e6b94e882525cea6f5a9853e1ff7b4a1d5f470b23ff8ae11',
   port: 3881,
   portRpc: 3882,
@@ -80,7 +110,7 @@ bitcore.Networks.remove(bitcore.Networks.testnet);
 bitcore.Networks.mainnet = bitcore.Networks.add(mainnet);
 bitcore.Networks.testnet = bitcore.Networks.add(testnet);
 // bitcore.Networks.regtest = bitcore.Networks.add(regtest);
-bitcore.Networks.livenet = bitcore.Networks.mainnet;  // TODO change mainnet
+bitcore.Networks.livenet = bitcore.Networks.testnet;  // TODO change mainnet
 
 
 // this 'global' is overwritten by tests!
