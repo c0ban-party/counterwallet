@@ -261,7 +261,7 @@ var APPROX_SECONDS_PER_BLOCK = USE_TESTNET ? 20 * 60 : 60; //a *rough* estimate 
 
 var KEY_ASSET = {
   'BTC': 'RYO',
-  'XCP': 'XBP',
+  'XCP': 'OKM',
   'USD': 'JPY',
   'Bitcoin': 'c0ban',
   'Counterparty': 'c0ban-party'
