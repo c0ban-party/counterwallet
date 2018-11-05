@@ -262,6 +262,8 @@ function IssueAdditionalAssetModalViewModel() {
         } else {
           message = i18n.t("you_have_issued", self.additionalIssue(), self.asset().ASSET);
         }
+        message += "<br/><br/>";
+        message += i18n.t("issuance_end_message", getAddressLabel(self.address()), self.additionalIssue(), KEY_ASSET.XCP);
 
         WALLET.showTransactionCompleteDialog(message + " " + i18n.t(ACTION_PENDING_NOTICE), message, armoryUTx);
       }

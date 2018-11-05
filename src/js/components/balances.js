@@ -1626,21 +1626,9 @@ function TestnetBurnModalViewModel() {
     isValidPositiveQuantity: self,
     validation: [{
       validator: function(val, self) {
-        return parseFloat(val) > 0 && parseFloat(val) <= 1;
-      },
-      message: i18n.t('quantity_must_be_between_0_and_1'),
-      params: self
-    }, {
-      validator: function(val, self) {
         return parseFloat(val) <= WALLET.getBalance(self.address(), KEY_ASSET.BTC) - normalizeQuantity(MIN_FEE);
       },
       message: i18n.t('quantity_of_exceeds_balance', KEY_ASSET.BTC),
-      params: self
-    }, {
-      validator: function(val, self) {
-        return !(parseFloat(val) > 3900 - self.btcAlreadyBurned());
-      },
-      message: i18n.t('you_can_only_burn'),
       params: self
     }]
   });

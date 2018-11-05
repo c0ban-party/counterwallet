@@ -599,9 +599,6 @@
           <span data-bind="visible: 1 - btcAlreadyBurned() > 0">
             <b data-bind="locale: 'burn_up_to', localeArgs: {0: maxPossibleBurn(), 1:'RYO'}"></b>
           </span>
-          <span data-bind="visible: 1 - btcAlreadyBurned() <= 0">
-            <b class="errorColor"><span data-bind="locale: 'already_burned', localeArgs: 'RYO'"></span></b>
-          </span>
        </p>
        <form class="smart-form" data-bind="submit: doAction"><fieldset>
           <section><div class="row">
@@ -802,8 +799,8 @@
               </div>
             </div>
           </section>
-
         </fieldset></form>
+        <p class="formPadded" style="text-align:center" data-bind="locale: 'asset_creation_fee_xcp', localeArgs: {0:'OKM'}"></p>
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-default" data-bind="click: hide, locale: 'cancel'"></button>
