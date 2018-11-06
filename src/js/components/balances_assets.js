@@ -67,10 +67,10 @@ function CreateAssetModalViewModel() {
   });
 
   self.hasXCPForNamedAsset = ko.computed(function() {
-    return self.xcpBalance() >= self.quantity(); // ASSET_CREATION_FEE_XCP;
+    return self.xcpBalance() >= ASSET_CREATION_FEE_XCP;
   });
   self.hasXCPForSubAsset = ko.computed(function() {
-    return self.xcpBalance() >= self.quantity(); // SUBASSET_CREATION_FEE_XCP;
+    return self.xcpBalance() >= SUBASSET_CREATION_FEE_XCP;
   });
 
   self.ownedNamedAssets = ko.computed(function() { //stores BuySellAddressInDropdownItemModel objects
@@ -142,7 +142,7 @@ function CreateAssetModalViewModel() {
         }
         message += "<br/><br/>";
         if (self.tokenNameType() == 'alphabetic') {
-          message += i18n.t("issuance_end_message", getAddressLabel(self.address()), self.quantity(), KEY_ASSET.XCP);
+          message += i18n.t("issuance_end_message", getAddressLabel(self.address()), ASSET_CREATION_FEE_XCP, KEY_ASSET.XCP);
         } else {
           message += i18n.t("free_issuance_end_message", KEY_ASSET.XCP);
         }
@@ -270,9 +270,6 @@ function IssueAdditionalAssetModalViewModel() {
         } else {
           message = i18n.t("you_have_issued", self.additionalIssue(), self.asset().ASSET);
         }
-        message += "<br/><br/>";
-        message += i18n.t("issuance_end_message", getAddressLabel(self.address()), self.additionalIssue(), KEY_ASSET.XCP);
-
         WALLET.showTransactionCompleteDialog(message + " " + i18n.t(ACTION_PENDING_NOTICE), message, armoryUTx);
       }
     );

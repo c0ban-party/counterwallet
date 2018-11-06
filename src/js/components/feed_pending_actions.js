@@ -319,7 +319,7 @@ PendingActionFeedViewModel.modifyBalancePendingFlag = function(category, data, f
       //updateUnconfirmedBalance(data['source'], data['asset'], data['quantity'], null, data);
       // issuance fee
       if (data['asset'].substring(0, 1) != 'A') {
-        updateUnconfirmedBalance(data['source'], KEY_ASSET.XCP, -data['quantity'] * UNIT);
+        updateUnconfirmedBalance(data['source'], KEY_ASSET.XCP, -ASSET_CREATION_FEE_XCP * UNIT);
       }
     }
 
