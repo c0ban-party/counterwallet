@@ -140,7 +140,7 @@
                           <div class="row">
                             <label class="col col-lg-4 control-label font-medlg"><span data-bind="locale: 'wager'"></span>:</label>
                             <div class="col col-lg-8">
-                              <input type="text"  name="wager" class="number form-control"  data-bind="value: $parent.wager, valueUpdate: 'input'" /> <span data-bind="text: OKM"></span>
+                              <input type="text"  name="wager" class="number form-control"  data-bind="value: $parent.wager, valueUpdate: 'input'" /> <span data-bind="text: XCB"></span>
                               <br /><span class="invalid" data-bind="validationMessage: $parent.wager"></span>
                             </div>
                           </div>
@@ -170,9 +170,9 @@
                           <div class="row" data-bind="visible: $parent.showAdvancedOptions || ($parent.counterBets().length == 0 && $parent.operatorOdds()==false)">
                             <label class="col col-lg-4 control-label font-medlg"><span data-bind="locale: 'odds'"></span>:</label>
                             <div class="col col-lg-8">
-                              <input name="odd" class="number form-control" data-bind="value: $parent.odd, valueUpdate: 'input'" type="text"/> <span data-bind="text: OKM"></span>
+                              <input name="odd" class="number form-control" data-bind="value: $parent.odd, valueUpdate: 'input'" type="text"/> <span data-bind="text: XCB"></span>
                               <span class="invalid" data-bind="validationMessage: $parent.odd"></span>
-                              <br /><div class="note" data-bind="locale: 'odds_note', localeArgs: OKM"></div>
+                              <br /><div class="note" data-bind="locale: 'odds_note', localeArgs: XCB"></div>
                             </div>
                           </div>
                           <div class="row" data-bind="visible: info_data.type=='cfd' && $parent.showAdvancedOptions">
@@ -215,7 +215,7 @@
                               <div class="progress-bar bg-color-greenLight" data-bind="attr: {style: 'width: '+$parent.greenPercent()+'%'}"></div>
                               <div class="progress-bar bg-color-redLight" data-bind="attr: {style: 'width: '+(100-$parent.greenPercent())+'%'}"></div>
                             </div>
-                            <span data-bind="locale: 'win'"></span> <span data-bind="text: $parent.odd"></span> <span data-bind="locale: 'for_every_xcp', localeArgs: {0:OKM, 1:OKM}"></span>
+                            <span data-bind="locale: 'win'"></span> <span data-bind="text: $parent.odd"></span> <span data-bind="locale: 'for_every_xcp', localeArgs: {0:XCB, 1:XCB}"></span>
                             <a data-bind="visible: operatorOdds" href="#" onclick="return false" title="The feed operator is actively managing the odds">
                               <span class="fa fa-crosshairs"></span>
                             </a>
