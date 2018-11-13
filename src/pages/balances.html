@@ -671,12 +671,12 @@
             <div class="col col-sm-9">
               <label class="radio" data-bind="visible: hasXCPForNamedAsset() == true">
                 <input type="radio" data-bind="checked: tokenNameType" name="tokenNameType" value="alphabetic">
-                <i></i><span data-bind="locale: 'alphabetic_name', localeArgs: 'OKM'"></span>
+                <i></i><span data-bind="locale: 'alphabetic_name', localeArgs: {0:ASSET_CREATION_FEE_XCP,1:XCP}"></span>
                 <div class="note" style="margin-top:0" data-bind="locale: 'token_name_rules'"></div>
               </label>
               <label class="radio" data-bind="visible: hasXCPForSubAsset() == true && ownedNamedAssets().length > 0">
                 <input type="radio" data-bind="checked: tokenNameType" name="tokenNameType" value="subasset">
-                <i></i><span data-bind="locale: 'alphabetic_sub_name', localeArgs: 'OKM'"></span>
+                <i></i><span data-bind="locale: 'alphabetic_sub_name', localeArgs: {0:ASSET_CREATION_FEE_XCP,1:XCP}"></span>
                 <div class="note" style="margin-top:0" data-bind="locale: 'token_subname_rules'"></div>
               </label>
             </div>
