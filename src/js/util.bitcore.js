@@ -12,7 +12,7 @@ var mainnet = {
   seedsDns: [ 'jp01.dnsseed.c0ban.com', 'kr01.dnsseed.c0ban.com' ],
   versions:
    { bip32: { private: 0x0488ade4, public: 0x0488b21e },
-     bip44: 0, // RYO isn't registerd at BIP-44
+     bip44: 88888, // RYO isn't registerd at BIP-44
      private: 136,
      public: 18,
      scripthash: 28},
@@ -57,8 +57,8 @@ var testnet = {
 
 var regtest = {
   hashGenesisBlock: '3249e44acac8fc67e6b94e882525cea6f5a9853e1ff7b4a1d5f470b23ff8ae11',
-  port: 3881,
-  portRpc: 3882,
+  port: 23881,
+  portRpc: 23882,
   protocol: { magic: 0xdab5bffa },
   versions:
    { bip32: { private: 0x04358394, public: 0x043587cf },
