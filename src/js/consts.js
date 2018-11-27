@@ -189,7 +189,7 @@ var TESTNET_BURN = {
 };
 var MAINNET_BURN = {
   START: 1630117,
-  END:   88000000
+  END:   2697783
 };
 
 /***********
